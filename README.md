@@ -30,8 +30,14 @@ Follow link [here](https://learn.microsoft.com/en-us/azure/synapse-analytics/get
 
 #### Pipeline Creation
 - Open the newly created Synapse workspace and navigate to the Synapse Studio by selecting “Open Synapse Studio”
+<img width="454" alt="fig2" src="https://user-images.githubusercontent.com/104025201/229139179-4132ef32-1264-4439-ae14-598a05186430.png">
+
 - Navigate to the “Integrate” tab and select “+” sign and “Pipeline” to create a new Synapse Pipeline.
+<img width="454" alt="fig3" src="https://user-images.githubusercontent.com/104025201/229139264-14eb20cf-f896-424f-a26a-b931c2b726e2.png">
+
 - Drag and Drop “Copy data”activity from the “Move & transform” tile to the center plane to add the “Copy data" activity into the new Pipeline named “Pipeline 1” by default.
+<img width="400" alt="fig4" src="https://user-images.githubusercontent.com/104025201/229139335-a9b1191d-015c-44b2-9499-5b45c97b9bd8.png">
+
 
 #### Set up Atlas as Source
 - Select the “Source” tab from the bottom plane and click on the “+ New” button against the “Source dataset” label.
