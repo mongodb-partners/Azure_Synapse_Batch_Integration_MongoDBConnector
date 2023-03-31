@@ -1,7 +1,7 @@
 # Introduction
 MongoDB Atlas is a great choice for the foundation of an Operational Data Layer (ODL) which can bring an end to the woes of the siloed data and can be that central Single view which can enable large scale limitless real-time analytics. Azure Synapse analytics is a unified platform that supports the multi-dimensional, infinite scale  analytics needs of the modern enterprise.Thus, the synergy would enable any enterprise to operationalise their siloed data and use it for powerful analytics to derive rich insights from their data.
 
-# MongoDB Atlas and Synapse integration
+# MongoDB Atlas and Synapse Integration
 This repo gives instructions to achieve a Batch/ micro-batch integration between MongoDB Atlas and Synapse.
 
 ## Batch/ Micro-batch Integration
