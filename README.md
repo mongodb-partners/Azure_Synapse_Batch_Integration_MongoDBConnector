@@ -91,13 +91,29 @@ Select “Azure subscription” as the “Account selection method” and select
 
 #### Publish Changes and Run the Pipeline
 - After all settings are done, select the Publish all button to save all the changes. It will show all the changes, select “Publish” button. It will show that publishing is in progress on top right of the screen.
+<img width="436" alt="fig41" src="https://user-images.githubusercontent.com/104025201/229148079-e3c71cff-6b05-453d-b2e3-dd1dd99b78dd.png">
+
 - To confirm if Publishing is complete , check the notification bell icon on the top right and you can see the “Publishing complete” message.
+<img width="234" alt="fig42" src="https://user-images.githubusercontent.com/104025201/229148121-589cc43a-ae97-4ff7-9c54-72b83d827332.png">
+
 - We can run the Pipeline in Debug or trigger to see if the data is copied using the Pipeline from MongoDB movies collection to the default container in the default ADLS gen2. Click Debug or Add trigger -> Trigger now icons on the top of the Pipeline. You will see a warning below as we have not set up any parameters. We can ignore the message by clicking the “Ok” button.
+<img width="253" alt="fig43" src="https://user-images.githubusercontent.com/104025201/229148217-d4b5d629-30f6-44f9-9dab-7146741cd88c.png">
+
 - You will see a message that Pipeline is running. You can click that link in the message to see the Pipeline running, or always go to  the “Monitor” tab (on left) and see the Pipeline execution under the “Integration -> Pipeline runs”. Select “Pipeline 1” which should have Succeeded.
+<img width="454" alt="fig44" src="https://user-images.githubusercontent.com/104025201/229148260-785d2069-e7a6-4d8a-bbec-84a3a2a754d7.png">
+
 - You can see the “Copy data1” stage that was run and its details below in the “Activity runs” section. Select the spectacles icon against the “Copy data1” stage. Note: you will see the icon only when you hover over against “Copy data1” under the the “Activity name”
+<img width="451" alt="fig45" src="https://user-images.githubusercontent.com/104025201/229148290-699ec1a9-49a5-45be-b303-cb754528014b.png">
+
 - This will show the details of the stage, including size of data and rows read and written, along with the time taken and the DIUs consumed.
+<img width="401" alt="fig46" src="https://user-images.githubusercontent.com/104025201/229148351-cf2bfb2e-067d-430b-9edd-44431d8b80b0.png">
+
 - To verify that the 10 rows from the “movies” collection got transferred. Go to the “Data” tab (on left), select the “Linked" tab to see all linked services. We can see our default (Primary) Synapse ADLS Gen2 storage (labmdbsynapse in the example) which was created when Synapse workspace was set up. You can also see the default container (defaultprimary in the example). As we didnt create and select a folder or a filename, the Json blob was created directly inside the container and has a default name which is data-<random GUID>.json. Select the file and it will be downloaded to your local machine.
+<img width="454" alt="fig47" src="https://user-images.githubusercontent.com/104025201/229148387-fd2d5220-a4fb-4d59-81c7-7fcc05f1ecd6.png">
+
 - Open the downloaded file in VSCode and you can see the 10 records copied to Synapse -> ADLS Gen2 container from MongoDB sample_mflix/movies collection.
+<img width="454" alt="fig48" src="https://user-images.githubusercontent.com/104025201/229148419-cb2f40f9-951d-4977-870a-21c846573389.png">
+
 
 **Congratulations! You have successfully created a Synapse Pipeline and used teh MongoDB connector to fetch data from MongoDB collection to a blob storage in Synapse. Instead of ADLS Gen2, you can also move to dedicated SQL or other connected data stores in Synapse. You can repeat this exercise to create a new Pipeline and interchange the Source and sink to take the data from the json in Synapse to a MongoDB collection. In this case MongoDB Atlas acts as a sink.**
 
