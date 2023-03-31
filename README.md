@@ -74,10 +74,20 @@ Also select the “Cursor method” as “limit” and give a value of 10, to li
   
 #### Set up ADLS Gen2 as Sink 
 - Now that the source is set to MongoDB movies collection, let's set up the Sink to Azure Blob storage. Select the “Sink” tab and select “+ New” against the “Sink dataset” label. Select “Azure Blob Storage” from the list of the New integration datasets and click the “Continue” button.
+<img width="191" alt="fig31" src="https://user-images.githubusercontent.com/104025201/229145382-124968d3-543e-430c-b730-e992268c592f.png">
+  
 - Select format as “JSON” for the format in which the blob will be written out. Click “Continue” button to select the JSON format.
+<img width="258" alt="fig32" src="https://user-images.githubusercontent.com/104025201/229145465-2175f49e-84fc-4e73-bef4-cc9c164ddcde.png">
+
 - Select “+ New” under “Linked service” for the new JSON based Azure blob storage linked service.
-- Select “Azure subscription” as the “Account selection method” and select the ADLS Gen2 we created when setting up the Synapse workspace. (labmdbsynapseadls in the example). Click “Test connection” and on “Connection successful” message , click the “Create” button to create the new linked service.
+
+Select “Azure subscription” as the “Account selection method” and select the ADLS Gen2 we created when setting up the Synapse workspace. (labmdbsynapseadls in the example). Click “Test connection” and on “Connection successful” message , click the “Create” button to create the new linked service.
+
+<img width="280" alt="fig33" src="https://user-images.githubusercontent.com/104025201/229145511-777d9d28-7775-413c-95d0-708d7c5784be.png">
+
 - Select the folder icon in the “File path” to select the container created in Step. the blobs created by copying from MongoDB Atlas will be stored in this default container. We can create a specific folder in this container using the Data tab. For simplicity , we have kept it in the container itself. Click the “Ok” button and we can see the JSON linked service (Json1) against the “Sink dataset”.
+<img width="313" alt="fig35" src="https://user-images.githubusercontent.com/104025201/229146084-d0822f3e-af68-4097-9a22-ae76f5089a55.png">
+
 
 #### Publish Changes and Run the Pipeline
 - After all settings are done, select the Publish all button to save all the changes. It will show all the changes, select “Publish” button. It will show that publishing is in progress on top right of the screen.
