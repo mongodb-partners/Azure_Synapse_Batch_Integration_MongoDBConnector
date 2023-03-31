@@ -10,7 +10,7 @@ In Azure Synapse Analytics, you can integrate MongoDB on-premises instances and 
 
 For more information about how to set up and configure the connectors, see these resources for [MongoDB](https://learn.microsoft.com/en-us/azure/data-factory/connector-mongodb?tabs=data-factory) and [MongoDB Atlas](https://learn.microsoft.com/en-us/azure/data-factory/connector-mongodb-atlas?tabs=data-factory). 
 
-### Prerequisites:
+### Pre-requisites:
 You will need the below set up before starting the Lab:
 1. MongoDB Atlas cluster setup: 
 Register for a new Atlas Account [here](https://www.mongodb.com/docs/atlas/tutorial/create-atlas-account/#register-a-new-service-account). Follow steps from 1 to 4 (Create an Atlas account, Deploy a Free cluster, Add your IP to the IP access list and Create a Database user) to set up the Atlas environment. Also, follow step 7 “Load Sample Data” to load sample data to be used in the lab.
@@ -23,17 +23,17 @@ Follow link [here](https://azure.microsoft.com/en-in/free/) to set up a free azu
 Follow link [here](https://learn.microsoft.com/en-us/azure/synapse-analytics/get-started-create-workspace) to set up a Synapse workspace within you Azure account
 
 ### Integration Steps:
-  1. Pipeline Creation
-  2. Set up Atlas as Source 
-  3. Set up ADLS Gen2 as Sink 
-  4. Publish Changes and Run the Pipeline
+  1. [Pipeline Creation](#pipeline-creation)
+  2. [Set up Atlas as Source](#set-up-atlas-as-source) 
+  3. [Set up ADLS Gen2 as Sink](#set-up-adls-gen2-as-sink)
+  4. [Publish Changes and Run the Pipeline](#publish-changes-and-run-the-pipeline)
 
-#### 1. Pipeline Creation
+#### Pipeline Creation
 - Open the newly created Synapse workspace and navigate to the Synapse Studio by selecting “Open Synapse Studio”
 - Navigate to the “Integrate” tab and select “+” sign and “Pipeline” to create a new Synapse Pipeline.
 - Drag and Drop “Copy data”activity from the “Move & transform” tile to the center plane to add the “Copy data" activity into the new Pipeline named “Pipeline 1” by default.
 
-#### 2. Set up Atlas as Source
+#### Set up Atlas as Source
 - Select the “Source” tab from the bottom plane and click on the “+ New” button against the “Source dataset” label.
 - Search for “mongodb” in the box against the label “Select a data store” . Select “MongoDB Atlas” and press the “Continue” button.
 - Select “New” against the “Linked Service” box to create a new Atlas cluster integration.
@@ -45,14 +45,14 @@ Follow link [here](https://learn.microsoft.com/en-us/azure/synapse-analytics/get
 - We can see the new linked service with the default name (MongoDbAtlasCollection1) added as the source dataset.
   Also select the “Cursor method” as “limit” and give a value of 10, to limit copying only 10 records from MongoDB Atlas to Synapse ADLS Gen2 storage.
 
-#### 3. Set up ADLS Gen2 as Sink 
+#### Set up ADLS Gen2 as Sink 
 - Now that the source is set to MongoDB movies collection, let's set up the Sink to Azure Blob storage. Select the “Sink” tab and select “+ New” against the “Sink dataset” label. Select “Azure Blob Storage” from the list of the New integration datasets and click the “Continue” button.
 - Select format as “JSON” for the format in which the blob will be written out. Click “Continue” button to select the JSON format.
 - Select “+ New” under “Linked service” for the new JSON based Azure blob storage linked service.
 - Select “Azure subscription” as the “Account selection method” and select the ADLS Gen2 we created when setting up the Synapse workspace. (labmdbsynapseadls in the example). Click “Test connection” and on “Connection successful” message , click the “Create” button to create the new linked service.
 - Select the folder icon in the “File path” to select the container created in Step. the blobs created by copying from MongoDB Atlas will be stored in this default container. We can create a specific folder in this container using the Data tab. For simplicity , we have kept it in the container itself. Click the “Ok” button and we can see the JSON linked service (Json1) against the “Sink dataset”.
 
-#### 4. Publish Changes and Run the Pipeline
+#### Publish Changes and Run the Pipeline
 - After all settings are done, select the Publish all button to save all the changes. It will show all the changes, select “Publish” button. It will show that publishing is in progress on top right of the screen.
 - To confirm if Publishing is complete , check the notification bell icon on the top right and you can see the “Publishing complete” message.
 - We can run the Pipeline in Debug or trigger to see if the data is copied using the Pipeline from MongoDB movies collection to the default container in the default ADLS gen2. Click Debug or Add trigger -> Trigger now icons on the top of the Pipeline. You will see a warning below as we have not set up any parameters. We can ignore the message by clicking the “Ok” button.
