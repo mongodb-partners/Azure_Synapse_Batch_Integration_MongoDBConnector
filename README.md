@@ -41,16 +41,37 @@ Follow link [here](https://learn.microsoft.com/en-us/azure/synapse-analytics/get
 
 #### Set up Atlas as Source
 - Select the “Source” tab from the bottom plane and click on the “+ New” button against the “Source dataset” label.
-- Search for “mongodb” in the box against the label “Select a data store” . Select “MongoDB Atlas” and press the “Continue” button.
-- Select “New” against the “Linked Service” box to create a new Atlas cluster integration.
-- In the MongoDB Atlas “Database” view (on left) under “Data Services” (on top) Select “Connect” button against your cluster. Here “Sandbox” is the new cluster created and the sample dataset loaded.
-- Select “Connect you application” to get the url for the MongoDB cluster to connect from Synapse. You will see the error as below saying that the current IP is not added, if you missed adding it as part of the prerequisite “1. MongoDB Atlas cluster setup”, step # 3 “Add your IP to the IP access list”. In our case, this doesn't matter as Synapse will use its set of Ip addresses and that is why we have asked to add “0.0.0.0/0” to the IP whitelist.
-- Copy the connection url  and replace <username> with the Database user and <password> with the Database password, that was added as part of prerequisite “1. MongoDB Atlas cluster setup”, step # 4 “Create a Database user”. Make sure the database user has a ”Read and write to any database” built-in role attached.
-- Paste the url in the Connection string and type the database name as “sample_mflix” and select “Test Connection” to test the connectivity. This database and its collections were created as part of “1. MongoDB Atlas cluster setup”, step # 7 “Load Sample Data”. You should see a “Connection successful” message indicating that Synapse is able to talk to MongoDB Atlas.
-- Select “Create” to create the connection as a new linked service in Synapse. After successful creation of the linked service, it will ask you to select the collection. Select the “movies” collection and select the “OK” button.
-- We can see the new linked service with the default name (MongoDbAtlasCollection1) added as the source dataset.
-  Also select the “Cursor method” as “limit” and give a value of 10, to limit copying only 10 records from MongoDB Atlas to Synapse ADLS Gen2 storage.
+<img width="416" alt="fig21" src="https://user-images.githubusercontent.com/104025201/229141328-725a990a-87e8-46cb-b03d-0a839ba29893.png">
 
+- Search for “mongodb” in the box against the label “Select a data store” . Select “MongoDB Atlas” and press the “Continue” button.
+<img width="416" alt="fig22" src="https://user-images.githubusercontent.com/104025201/229141365-0793915e-3f8d-45b8-893d-136c26bea59f.png">
+
+- Select “New” against the “Linked Service” box to create a new Atlas cluster integration.
+<img width="331" alt="fig23" src="https://user-images.githubusercontent.com/104025201/229141424-14c12968-2b67-411b-b72d-63ef8efe8024.png">
+
+- In the MongoDB Atlas “Database” view (on left) under “Data Services” (on top) Select “Connect” button against your cluster. Here “Sandbox” is the new cluster created and the sample dataset loaded.
+<img width="385" alt="fig24" src="https://user-images.githubusercontent.com/104025201/229141517-c8022be5-fa5e-4d90-8847-99385df49249.png">
+
+- Select “Connect you application” to get the url for the MongoDB cluster to connect from Synapse. You will see the error as below saying that the current IP is not added, if you missed adding it as part of the prerequisite “1. MongoDB Atlas cluster setup”, step # 3 “Add your IP to the IP access list”. In our case, this doesn't matter as Synapse will use its set of Ip addresses and that is why we have asked to add “0.0.0.0/0” to the IP whitelist.
+<img width="390" alt="fig25" src="https://user-images.githubusercontent.com/104025201/229141604-66b16475-f804-4f2b-b506-57a5d87fc537.png">
+
+- Copy the connection url  and replace <username> with the Database user and <password> with the Database password, that was added as part of prerequisite “1. MongoDB Atlas cluster setup”, step # 4 “Create a Database user”. Make sure the database user has a ”Read and write to any database” built-in role attached.
+<img width="400" alt="fig26" src="https://user-images.githubusercontent.com/104025201/229141741-bfaffa70-9a81-4cab-a19e-775dd47bda54.png">
+  
+- Paste the url in the Connection string and type the database name as “sample_mflix” and select “Test Connection” to test the connectivity. This database and its collections were created as part of “1. MongoDB Atlas cluster setup”, step # 7 “Load Sample Data”. You should see a “Connection successful” message indicating that Synapse is able to talk to MongoDB Atlas.
+<img width="298" alt="fig27" src="https://user-images.githubusercontent.com/104025201/229141814-27ef6178-4bda-4e16-a3ab-dcfb78bb51e8.png">
+
+- Select “Create” to create the connection as a new linked service in Synapse. After successful creation of the linked service, it will ask you to select the collection. Select the “movies” collection and select the “OK” button.
+<img width="296" alt="fig29" src="https://user-images.githubusercontent.com/104025201/229143389-ca73e560-bcd9-47fe-a5b0-50951f4fc4d0.png">
+  
+- We can see the new linked service with the default name (MongoDbAtlasCollection1) added as the source dataset.
+<img width="282" alt="fig210" src="https://user-images.githubusercontent.com/104025201/229142187-70dec889-0577-4963-a7e3-03af0595aff0.png">
+
+Also select the “Cursor method” as “limit” and give a value of 10, to limit copying only 10 records from MongoDB Atlas to Synapse ADLS Gen2 storage.
+
+<img width="281" alt="fig211" src="https://user-images.githubusercontent.com/104025201/229142252-ea7db1a3-33cc-4176-bb52-16d55e82ae27.png">
+
+  
 #### Set up ADLS Gen2 as Sink 
 - Now that the source is set to MongoDB movies collection, let's set up the Sink to Azure Blob storage. Select the “Sink” tab and select “+ New” against the “Sink dataset” label. Select “Azure Blob Storage” from the list of the New integration datasets and click the “Continue” button.
 - Select format as “JSON” for the format in which the blob will be written out. Click “Continue” button to select the JSON format.
