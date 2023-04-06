@@ -14,10 +14,13 @@ Register for a new Atlas Account [here](https://www.mongodb.com/docs/atlas/tutor
 Follow steps from 1 to 4 (*Create an Atlas account*, *Deploy a Free cluster*, *Add your IP to the IP access list* and *Create a Database user*) to set up the Atlas environment.   
 Also, follow step 7 “*Load Sample Data*” to load sample data to be used in the lab.
 
+![Picture 2](https://user-images.githubusercontent.com/104025201/230300219-6f95d9be-616f-4267-8cce-e4d3af5d1411.png)
+
 **Note: For this lab add “0.0.0.0/0” to the IP access list so that Synapse can connect to MongoDB Atlas. In Production scenarios, it is recommended to use Vnet Peering or Private Link options.**
 
 2. Azure account setup:    
 Follow link [here](https://azure.microsoft.com/en-in/free/) to set up a free azure account
+
 3. Azure Synapse Analytics Workspace setup:   
 Follow link [here](https://learn.microsoft.com/en-us/azure/synapse-analytics/get-started-create-workspace) to set up a Synapse workspace within you Azure account
 
