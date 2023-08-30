@@ -117,7 +117,7 @@ Select “*Azure subscription*” as the “Account selection method” and sele
 <img width="454" alt="fig48" src="https://user-images.githubusercontent.com/104025201/229148419-cb2f40f9-951d-4977-870a-21c846573389.png">
 
 
-**Congratulations! You have successfully created a Synapse Pipeline and used teh MongoDB connector to fetch data from MongoDB collection to a blob storage in Synapse. Instead of ADLS Gen2, you can also move to dedicated SQL or other connected data stores in Synapse. You can repeat this exercise to create a new Pipeline and interchange the Source and sink to take the data from the json in Synapse to a MongoDB collection. In this case MongoDB Atlas acts as a sink.**
+**Congratulations! You have successfully created a Synapse Pipeline and used the MongoDB connector to fetch data from MongoDB collection to a blob storage in Synapse. Instead of ADLS Gen2, you can also move to dedicated SQL or other connected data stores in Synapse. You can repeat this exercise to create a new Pipeline and interchange the Source and sink to take the data from the json in Synapse to a MongoDB collection. In this case MongoDB Atlas acts as a sink.**
 
 
 
