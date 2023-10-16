@@ -69,7 +69,7 @@ Follow link [here](https://learn.microsoft.com/en-us/azure/synapse-analytics/get
 - We can see the new linked service with the default name (MongoDbAtlasCollection1) added as the source dataset.
 <img width="282" alt="fig210" src="https://user-images.githubusercontent.com/104025201/229142187-70dec889-0577-4963-a7e3-03af0595aff0.png">
 
-Also select the “*Cursor method*” as “*limitv” and give a value of 10, to limit copying only 10 records from MongoDB Atlas to Synapse ADLS Gen2 storage.
+Also select the “*Cursor method*” as “*limit*” and give a value of 10, to limit copying only 10 records from MongoDB Atlas to Synapse ADLS Gen2 storage.
 
 <img width="281" alt="fig211" src="https://user-images.githubusercontent.com/104025201/229142252-ea7db1a3-33cc-4176-bb52-16d55e82ae27.png">
 
