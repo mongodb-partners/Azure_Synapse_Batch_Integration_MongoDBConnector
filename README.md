@@ -87,7 +87,7 @@ Select “*Azure subscription*” as the “Account selection method” and sele
 
 <img width="280" alt="fig33" src="https://user-images.githubusercontent.com/104025201/229145511-777d9d28-7775-413c-95d0-708d7c5784be.png">
 
-- Select the **folder icon** in the “*File path*” to select the container created in Step. the blobs created by copying from MongoDB Atlas will be stored in this default container. We can create a specific folder in this container using the Data tab. For simplicity , we have kept it in the container itself. Click the “*Ok*” button and we can see the JSON linked service (Json1) against the “*Sink dataset*”.
+- Select the **folder icon** in the “*File path*” to select the container. The blobs created by copying from MongoDB Atlas will be stored in this default container. We can create a specific folder in this container using the Data tab. For simplicity , we have kept it in the container itself. Click the “*Ok*” button and we can see the JSON linked service (Json1) against the “*Sink dataset*”.
 <img width="313" alt="fig35" src="https://user-images.githubusercontent.com/104025201/229146084-d0822f3e-af68-4097-9a22-ae76f5089a55.png">
 
 
