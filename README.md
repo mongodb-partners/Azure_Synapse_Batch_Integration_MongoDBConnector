@@ -75,7 +75,7 @@ Also select the “*Cursor method*” as “*limit*” and give a value of 10, t
 
   
 #### Set up ADLS Gen2 as Sink 
-- Now that the source is set to MongoDB movies collection, let's set up the Sink to Azure Blob storage. Select the “*Sink*” tab and select “*+ New*” against the “*Sink datasetv” label. Select “*Azure Blob Storage*” from the list of the New integration datasets and click the “*Continue*” button.
+- Now that the source is set to MongoDB movies collection, let's set up the Sink to Azure Blob storage. Select the “*Sink*” tab and select “*+ New*” against the “*Sink dataset*” label. Select “*Azure Blob Storage*” or "*Azure Data lake Storage Gen 2*"from the list of the New integration datasets and click the “*Continue*” button.
 <img width="191" alt="fig31" src="https://user-images.githubusercontent.com/104025201/229145382-124968d3-543e-430c-b730-e992268c592f.png">
   
 - Select format as “*JSON*” for the format in which the blob will be written out. Click “*Continue*” button to select the JSON format.
